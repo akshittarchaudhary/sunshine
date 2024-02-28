@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: cursive;
+            background-image: linear-gradient(to bottom right, #000000, #d8a600);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Hide overflow content */
+            position: relative;
+        }
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #5d0727;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: fireworks 3s infinite;
+            z-index: 1;
+        }
+
+
+        @keyframes fireworks {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 50px; /* Adjust the margin-top as needed */
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-image: linear-gradient(to bottom right, rgb(113, 7, 48), rgb(142, 88, 21));
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            margin: 0 10px; /* Adjust horizontal margin for spacing */
+            text-decoration: none;
+            animation: pulse 1s infinite alternate; /* Adding pulsing animation */
+        }
+
+        .nav-button:hover {
+            background-color: #FFA500;
+            animation: none; /* Disable animation on hover */
+        }
+
+        .nav-button:first-child {
+            margin-right: 20px; /* Adjust margin between the first and second buttons */
+        }
+
+        .nav-button:last-child {
+            margin-left: 20px; /* Adjust margin between the second and first buttons */
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Hide typing cursor */
+        .typed-cursor {
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+    <!-- Load library from the CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</head>
+<body>
+<!-- Fireworks animation -->
+<div class="firework" style="top: 10%; left: 10%;"></div>
+<div class="firework" style="top: 10%; left: 40%;"></div>
+<div class="firework" style="top: 10%; left: 70%;"></div>
+<div class="firework" style="top: 30%; left: 20%;"></div>
+<div class="firework" style="top: 30%; left: 50%;"></div>
+
+
+    <h1 style="text-align: center;" class="moving">HEY SUNSHINE</h1>
+    <div class="button-container">
+        <a href="gallery.html" class="nav-button">Gallery</a>
+        <a href="birthday.html" class="nav-button">Message</a>
+        <button class="nav-button" onclick="showMessage()">Moonlight</button>
+    </div>
+
+    <script>
+ function showMessage() {
+                alert("Under construction! Something interesting coming soon.");
+        }
+
+        var typed = new Typed('.moving', {
+            strings: ["Hello Sunshine", "Wishing you Happy Birthday", "Wishing you Blessed Birthday", "Wishing you Joyful Birthday", "Wishing you Abundant Happiness", "Wishing you Endless Smiles", "Wishing you Love and Laughter"],
+            typeSpeed: 70,
+            smartBackspace: true,
+            loop: true
+        });
+    </script>
+</body>
+</html>
